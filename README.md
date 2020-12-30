@@ -11,6 +11,7 @@ npm start
 ```
 
 This demo features an experimental package, [`react-prisma`](https://www.npmjs.com/package/react-prisma). 
+You can see `react-prisma` in action in [src/NoteList.server.js](src/NoteList.server.js).
 
 ## License
 This demo is MIT licensed.

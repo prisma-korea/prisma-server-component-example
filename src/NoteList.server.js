@@ -10,11 +10,6 @@ import {prisma} from './db.server';
 import SidebarNote from './SidebarNote';
 
 export default function NoteList({searchText}) {
-  // const notes = fetch('http://localhost:4000/notes').json();
-
-  // WARNING: This is for demo purposes only.
-  // We don't encourage this in real apps. There are far safer ways to access
-  // data in a real application!
   const notes = prisma.note.findMany();
 
   // Now let's see how the Suspense boundary above lets us not block on this.
