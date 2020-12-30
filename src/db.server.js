@@ -6,8 +6,6 @@
  *
  */
 
-import {Pool} from 'react-pg';
-import credentials from '../credentials';
+import {PrismaClient} from 'react-prisma';
 
-// Don't keep credentials in the source tree in a real app!
-export const db = new Pool(credentials);
+export const prisma = new PrismaClient();

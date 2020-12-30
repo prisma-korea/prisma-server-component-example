@@ -38,8 +38,8 @@ export default function Note({selectedId, isEditing}) {
     }
   }
 
-  let {id, title, body, updated_at} = note;
-  const updatedAt = new Date(updated_at);
+  let {id, title, body, updatedAt} = note;
+  updatedAt = new Date(updatedAt);
 
   // We could also read from a file instead.
   // body = readFile(path.resolve(`./notes/${note.id}.md`), 'utf8');

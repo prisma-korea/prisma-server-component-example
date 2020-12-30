@@ -13,7 +13,7 @@ import marked from 'marked';
 import ClientSidebarNote from './SidebarNote.client';
 
 export default function SidebarNote({note}) {
-  const updatedAt = new Date(note.updated_at);
+  const updatedAt = new Date(note.updatedAt);
   const lastUpdatedAt = isToday(updatedAt)
     ? format(updatedAt, 'h:mm bb')
     : format(updatedAt, 'M/d/yy');
