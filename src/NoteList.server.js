@@ -10,7 +10,13 @@ import {prisma} from './db.server';
 import SidebarNote from './SidebarNote';
 
 export default function NoteList({searchText}) {
-  const notes = prisma.note.findMany();
+  const notes = prisma.note.findMany({
+    where: {
+      title: {
+        contains: searchText ?? undefined,
+      },
+    },
+  });
 
   // Now let's see how the Suspense boundary above lets us not block on this.
   // fetch('http://localhost:4000/sleep/3000');
