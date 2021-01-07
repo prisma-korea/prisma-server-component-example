@@ -13,12 +13,13 @@ Instead of sending raw SQL queries, this repo uses [Prisma](https://prisma.io) a
 <table>
 <tr>
 <th> Prisma </th>
-<th> Raw SQL </th>
+<th> SQL </th>
 </tr>
 <tr>
 <td>
 
 ```js
+// A database query sent with Prisma
 const notes = prisma.note.findMany({
   where: {
     title: {
@@ -32,6 +33,7 @@ const notes = prisma.note.findMany({
 <td>
 
 ```js
+// A database query sent with plain SQL
 const notes = db.query(
   `select * from notes 
       where title ilike $1 
