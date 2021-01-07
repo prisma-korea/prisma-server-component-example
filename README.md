@@ -34,8 +34,8 @@ const notes = prisma.note.findMany({
 ```js
 const notes = db.query(
   `select * from notes 
-    where title ilike $1 
-    order by id desc`,
+      where title ilike $1 
+      order by id desc`,
   ['%' + searchText + '%']
 ).rows;
 ```
