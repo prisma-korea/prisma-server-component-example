@@ -18,6 +18,10 @@ babelRegister({
   plugins: ['@babel/transform-modules-commonjs'],
 });
 
+/**
+ * @typedef { import("@prisma/client").PrismaClient } PrismaClient
+ */
+
 const express = require('express');
 const compress = require('compression');
 const {readFileSync} = require('fs');
@@ -28,6 +32,9 @@ const {PrismaClient} = require('@prisma/client');
 const React = require('react');
 const ReactApp = require('../src/App.server').default;
 
+/**
+ * @type {PrismaClient}
+ */
 const prisma = new PrismaClient();
 
 const PORT = 4000;
