@@ -124,7 +124,7 @@ datasource db {
 
 
 
-### Evolving the app
+## Evolving the app
 
 Prisma enables you to run migrations based on the declarative [Prisma schema](https://www.prisma.io/docs/concepts/components/prisma-schema). Assume you want to add more functionality to the app and add a second table to the database to associate every note with an "author", here's the workflow that you can apply with Prisma.
 
