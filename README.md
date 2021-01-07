@@ -10,9 +10,39 @@ Instead of sending raw SQL queries, this repo uses [Prisma](https://prisma.io) a
 - Easier to query relations
 - Human-readable data model + generated (but customizable) SQL migration scripts
 
-![](https://i.imgur.com/IEycRJF.gif)
+<table>
+<tr>
+<th> Prisma </th>
+<th> Raw SQL </th>
+</tr>
+<tr>
+<td>
 
-This demo also uses a plain SQLite database file instead of requiring a PostgreSQL server. This enables you to explore the awesome benefits of Server Components without any additional setup.
+```js
+const notes = prisma.note.findMany({
+  where: {
+    title: {
+      contains: searchText,
+    },
+  },
+});
+```
+
+</td>
+<td>
+
+```js
+const notes = db.query(
+  `select * from notes where title ilike $1 order by id desc`,
+  ['%' + searchText + '%']
+).rows;
+```
+
+</td>
+</tr>
+</table>
+
+This demo also uses a plain [SQLite](https://www.sqlite.org/index.html) database file instead of requiring a PostgreSQL server. This enables you to explore the awesome benefits of Server Components without any additional setup.
 
 ## Usage
 
@@ -23,11 +53,11 @@ npm install
 npm start
 ```
 
-This demo features an experimental package, [`react-prisma`](https://www.npmjs.com/package/react-prisma). You can see `react-prisma` in action in [src/NoteList.server.js](src/NoteList.server.js).
+This demo features an experimental package, [`react-prisma`](https://www.npmjs.com/package/react-prisma). You can see `react-prisma` in action in [`src/NoteList.server.js`](./src/NoteList.server.js).
 
 ## Switch to another database (e.g. PostgreSQL, MySQL, SQL Server)
 
-If you want to try this example with another database than SQLite, you can adjust the the database connection in [prisma/schema.prisma](./prisma/schema.prisma) by reconfiguring the `datasource` block. 
+If you want to try this example with another database than SQLite, you can adjust the the database connection in [`prisma/schema.prisma`](./prisma/schema.prisma) by reconfiguring the `datasource` block. 
 
 Learn more about the different connection configurations in the [docs](https://www.prisma.io/docs/reference/database-reference/connection-urls).
 
@@ -94,7 +124,7 @@ datasource db {
 
 Prisma enables you to run migrations based on the declarative [Prisma schema](https://www.prisma.io/docs/concepts/components/prisma-schema). Assume you want to add more functionality to the app and add a second table to the database to associate every note with an "author", here's the workflow that you can apply with Prisma.
 
-First adjust the data model in [prisma/schema.prisma](./prisma/schema.prisma)
+First adjust the data model in [`prisma/schema.prisma`](./prisma/schema.prisma)
 
 ```diff
 // prisma/schema.prisma
@@ -147,7 +177,7 @@ prisma.note.findMany({
 
 ## View and edit the data in Prisma Studio
 
-Prisma Studio is a "database browser" that lets you view and edit the data in your database. You can either [download](https://github.com/prisma/studio/releases) it for your operating system or run the following command to run it in your browser:
+[Prisma Studio](https://github.com/prisma/studio/) is a "database browser" that lets you view and edit the data in your database. You can either [download](https://github.com/prisma/studio/releases) it for your operating system or run the following command to run it in your browser:
 
 ```
 npx prisma studio
