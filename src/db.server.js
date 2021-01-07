@@ -6,6 +6,12 @@
  *
  */
 
+/**
+ * @typedef { import("@prisma/client").PrismaClient } PrismaClient
+ */
 import {PrismaClient} from 'react-prisma';
 
+/**
+ * @type {PrismaClient}
+ */
 export const prisma = new PrismaClient();
