@@ -13,10 +13,13 @@ export default function NoteList({searchText}) {
   const notes = prisma.note.findMany({
     where: {
       title: {
-        contains: searchText ?? undefined
-      }
-    }
-  })
+        contains: searchText ?? undefined,
+      },
+    },
+  });
+
+  // Now let's see how the Suspense boundary above lets us not block on this.
+  // fetch('http://localhost:4000/sleep/3000');
 
   return notes.length > 0 ? (
     <ul className="notes-list">

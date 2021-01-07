@@ -8,11 +8,6 @@
 
 'use strict';
 
-/**
- * @typedef { import("@prisma/client").PrismaClient } PrismaClient
- */
-import {PrismaClient} from 'react-prisma';
-
 const register = require('react-server-dom-webpack/node-register');
 register();
 const babelRegister = require('@babel/register');
@@ -33,9 +28,6 @@ const {PrismaClient} = require('@prisma/client');
 const React = require('react');
 const ReactApp = require('../src/App.server').default;
 
-/**
- * @type {PrismaClient}
- */
 const prisma = new PrismaClient();
 
 const PORT = 4000;
