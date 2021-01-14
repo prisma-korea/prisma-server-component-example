@@ -2,7 +2,7 @@
 
 # React Server Components Demo with Prisma
 
-This is a fork of the official [React Server Components Demo](https://github.com/reactjs/server-components-demo).
+This is a fork of the official [React Server Components Demo](https://github.com/reactjs/server-components-demo). You can learn more about how Prisma and React Server Components fit together in this [video](https://youtu.be/ATBdP-Yfaec?t=1482).
 
 Instead of sending raw SQL queries, this repo uses [Prisma](https://prisma.io) as an ORM to communicate with the database. This approach has a number of benefits:
 
