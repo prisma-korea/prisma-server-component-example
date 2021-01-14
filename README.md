@@ -1,4 +1,4 @@
-![](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/81f9c2b2-1da3-4473-9245-2fa149fdf7f7/React_Server_Components_demo_V2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210113%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210113T143751Z&X-Amz-Expires=86400&X-Amz-Signature=8edc6bc7ca63e9c6a159f50f6279c91b19b466dbf3f797f9cc545e09ea765a29&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22React_Server_Components_demo_V2.png%22)
+![](https://imgur.com/wCjXu2u.png)
 
 # React Server Components Demo with Prisma
 
