@@ -1,3 +1,5 @@
+![](https://imgur.com/wCjXu2u.png)
+
 # React Server Components Demo with Prisma
 
 This is a fork of the official [React Server Components Demo](https://github.com/reactjs/server-components-demo).
