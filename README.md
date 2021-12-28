@@ -10,6 +10,10 @@ This is a fork of the official [React Server Components Demo with Prisma](https:
     ```shell
     npm i
     ```
+1. Run database migration
+    ```shell
+    npx prisma migrate dev
+    ```
 1. Start server.
     ```shell
     npm start
