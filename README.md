@@ -18,6 +18,7 @@ This is a fork of the official [React Server Components Demo with Prisma](https:
     ```shell
     npm start
     ```
+1. Open http://localhost:4000 in browser.
 
 ## Note
 Both React server components and `react-prisma` are in experimental stage.
