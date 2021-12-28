@@ -3,14 +3,15 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:dev.db"
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
-model Note {
-  id        Int      @id @default(autoincrement())
+model Post {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  title     String?
-  body      String?
+  published Boolean  @default(false)
 }

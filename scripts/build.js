@@ -23,6 +23,7 @@ webpack(
     entry: [path.resolve(__dirname, '../src/index.client.js')],
     output: {
       path: path.resolve(__dirname, '../build'),
+      publicPath: '/',
       filename: 'main.js',
     },
     module: {

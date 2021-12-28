@@ -6,34 +6,28 @@
  *
  */
 
-import {useState, Suspense} from 'react';
+import {Suspense} from 'react';
 import {ErrorBoundary} from 'react-error-boundary';
+import {BrowserRouter} from 'react-router-dom';
+import Spinner from './components/Spinner';
 
-import {useServerResponse} from './Cache.client';
-import {LocationContext} from './LocationContext.client';
+import {useServerResponse} from './cache.client';
 
-export default function Root({initialCache}) {
+export default function Root() {
   return (
-    <Suspense fallback={null}>
-      <ErrorBoundary FallbackComponent={Error}>
-        <Content />
-      </ErrorBoundary>
-    </Suspense>
+    <BrowserRouter>
+      <Suspense fallback={<Spinner />}>
+        <ErrorBoundary FallbackComponent={Error}>
+          <Content />
+        </ErrorBoundary>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
 function Content() {
-  const [location, setLocation] = useState({
-    selectedId: null,
-    isEditing: false,
-    searchText: '',
-  });
-  const response = useServerResponse(location);
-  return (
-    <LocationContext.Provider value={[location, setLocation]}>
-      {response.readRoot()}
-    </LocationContext.Provider>
-  );
+  const response = useServerResponse();
+  return response.readRoot();
 }
 
 function Error({error}) {

@@ -175,22 +175,6 @@ a {
   color: var(--primary-blue);
 }
 
-.text-with-markdown h1,
-.text-with-markdown h2,
-.text-with-markdown h3,
-.text-with-markdown h4,
-.text-with-markdown h5 {
-  margin-block: 2rem 0.7rem;
-  margin-inline: 0;
-}
-
-.text-with-markdown blockquote {
-  font-style: italic;
-  color: var(--gray-20);
-  border-left: 3px solid var(--gray-80);
-  padding-left: 10px;
-}
-
 hr {
   border: 0;
   height: 0;
@@ -199,6 +183,55 @@ hr {
 }
 
 /* ---------------------------------------------------------------------------*/
+.fullscreen {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.content {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  padding: 1em;
+  position: sticky;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2em;
+  background-color: black;
+  color: white;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.post-form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.post-form label {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.post-form label input {
+  flex: 1;
+}
+
+.post-form textarea {
+  resize: none;
+}
+
 /* https://codepen.io/mandelid/pen/vwKoe */
 .spinner {
   display: inline-block;
